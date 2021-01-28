@@ -59,8 +59,8 @@ class MyWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def printSTCode(self, i, j, k, length):
         self.STdisplay.setText("void delay_" + str(length) + "ms(){//@11.0592")
         self.STdisplay.append("    unsigned char i, j, k;")
-        self.STdisplay.append("    _nop_()\n    _nop_()")
+        self.STdisplay.append("    _nop_();\n    _nop_();")
         self.STdisplay.append("    for(i = " + str(i) + "; i > 0; i--)")
-        self.STdisplay.append("        for(j = " + str(j) + "; j > 0; j--);")
-        self.STdisplay.append("            for(k = " + str(k) + "; k > 0; k--)")
+        self.STdisplay.append("        for(j = " + str(j) + "; j > 0; j--)")
+        self.STdisplay.append("            for(k = " + str(k) + "; k > 0; k--);")
         self.STdisplay.append("}")
